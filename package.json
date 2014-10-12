@@ -1,6 +1,6 @@
 {
   "name": "array-to-wavefront-obj",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Serialize to wavefront OBJ file string",
   "main": "toOBJ.js",
   "devDependencies": {
