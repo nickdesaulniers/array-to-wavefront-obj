@@ -9,9 +9,9 @@
     var a = array[i] + 1;
     var b = array[i + 1] + 1;
     var c = array[i + 2] + 1;
-    str += a + '/' + (texturesFlag ? a + '/' : '') + a + ' ';
-    str += b + '/' + (texturesFlag ? b + '/' : '') + b + ' ';
-    return str + c + '/' + (texturesFlag ? c + '/' : '') + c + '\n';
+    str += a + '/' + (texturesFlag ? a : '') + '/' + a + ' ';
+    str += b + '/' + (texturesFlag ? b : '') + '/' + b + ' ';
+    return str + c + '/' + (texturesFlag ? c : '') + '/' + c + '\n';
   };
   function toOBJ (vertices, normals, textures, indices) {
     var str = '# Created by array-to-wavefront-obj, a free and open source\n';

@@ -30,3 +30,17 @@ vt 0.5 1
 f 1/1/1 2/2/2 3/3/3
 ```
 
+if the textures array is empty, then we would wind up with the string:
+
+```
+# Created by array-to-wavefront-obj, a free and open source
+# OBJ serializer for JavaScript
+v -1 -1 0
+v 1 -1 0
+v 0 1 0
+vn 0 0 1
+vn 0 0 1
+vn 0 0 1
+f 1//1 2//2 3//3
+```
+
