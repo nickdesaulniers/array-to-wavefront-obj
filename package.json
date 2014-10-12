@@ -1,0 +1,21 @@
+{
+  "name": "array-to-wavefront-obj",
+  "version": "0.0.0",
+  "description": "Serialize to wavefront OBJ file string",
+  "main": "toOBJ.js",
+  "devDependencies": {
+    "webgl-obj-loader": "~0.1.0"
+  },
+  "keywords": [
+    "wavefront",
+    "obj",
+    "vertices",
+    "vertex",
+    "normal",
+    "texture",
+    "indices",
+    "index"
+  ],
+  "author": "Nick Desaulniers",
+  "license": "Beerware"
+}
