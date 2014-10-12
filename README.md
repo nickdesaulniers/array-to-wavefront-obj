@@ -3,7 +3,7 @@
 `npm install array-to-wavefront-obj`
 
 ```javascript
-var toOBJ = require('./toOBJ.js');
+var toOBJ = require('array-to-wavefront-obj');
 
 var vertices = [-1.0, -1.0, 0.0,   1.0, -1.0, 0.0,   0.0, 1.0, 0.0];
 var normals =  [ 0.0,  0.0, 1.0,   0.0,  0.0, 1.0,   0.0, 0.0, 1.0];
