@@ -1,4 +1,4 @@
-#Array to Wavefront OBJ
+# Array to Wavefront OBJ
 
 `npm install array-to-wavefront-obj`
 
