@@ -3,17 +3,26 @@
     for (var j = 0; j < n; ++j) prefix += array[i + j] + (j === n - 1 ? '' : ' ');
     return prefix + '\n';
   };
-  function fLine (array, i, texturesFlag) {
+  function fLine (vertexIndices, normalIndices, textureIndices, i, texturesFlag) {
     var str = 'f ';
     // Faces are 1-indexed, hello Lua
-    var a = array[i] + 1;
-    var b = array[i + 1] + 1;
-    var c = array[i + 2] + 1;
-    str += a + '/' + (texturesFlag ? a : '') + '/' + a + ' ';
-    str += b + '/' + (texturesFlag ? b : '') + '/' + b + ' ';
-    return str + c + '/' + (texturesFlag ? c : '') + '/' + c + '\n';
+    var va = vertexIndices[i] + 1;
+    var vb = vertexIndices[i + 1] + 1;
+    var vc = vertexIndices[i + 2] + 1;
+    var na = normalIndices[i] + 1;
+    var nb = normalIndices[i + 1] + 1;
+    var nc = normalIndices[i + 2] + 1;
+    var ta = textureIndices[i] + 1;
+    var tb = textureIndices[i + 1] + 1;
+    var tc = textureIndices[i + 2] + 1;
+    str += va + '/' + (texturesFlag ? ta : '') + '/' + na + ' ';
+    str += vb + '/' + (texturesFlag ? tb : '') + '/' + nb + ' ';
+    return str + vc + '/' + (texturesFlag ? tc : '') + '/' + nc + '\n';
   };
-  function toOBJ (vertices, normals, textures, indices) {
+  function toOBJ (vertices, normals, textures, vertexIndices, normalIndices, textureIndices) {
+    normalIndices = normalIndices || vertexIndices;
+    textureIndices = textureIndices || vertexIndices;
+
     var str = '# Created by array-to-wavefront-obj, a free and open source\n';
     str +=    '# OBJ serializer for JavaScript\n';
     var i = 0;
@@ -29,8 +38,8 @@
         str += line('vt ', textures, i, 2);
       }
     }
-    for (i = 0; i < indices.length; i += 3) {
-      str += fLine(indices, i, hasTextures);
+    for (i = 0; i < vertexIndices.length; i += 3) {
+      str += fLine(vertexIndices, normalIndices, textureIndices, i, hasTextures);
     }
     return str;
   };
