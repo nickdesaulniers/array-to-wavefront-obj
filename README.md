@@ -63,7 +63,7 @@ var objStr = toOBJ(vertices, normals, textures, vertexIndices, normalIndices, te
 console.log(objStr);
 ```
 
-print the string
+prints the string
 
 ```
 # Created by array-to-wavefront-obj, a free and open source
